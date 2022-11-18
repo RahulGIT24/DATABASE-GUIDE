@@ -1,0 +1,83 @@
+//* Database Creation
+CREATE DATABASE SCHOOL;
+
+//* Using Database
+USE SCHOOL;
+
+//* DELETING DATABASE
+DROP DATABASE SCHOOL;
+
+//* Creation OF TABLES IN DATABASE
+CREATE TABLE student(
+    Name VARCHAR(255),
+    Roll_No INT(4),
+    Age INT(4),
+    Gender VARCHAR(255)
+);
+
+//* Inserting data into TABLES
+INSERT INTO student
+VALUES('RAHUL',12,16,MALE);
+
+//* Select command 
+//! To display the whole table info
+SELECT *
+FROM student;
+
+//! To select specific columns
+SELECT Name,Age
+FROM student;
+
+//* Using Arithmetic operators
+//! operators are +,-,*,/
+SELECT Name,Age,Age+2
+FROM student;
+
+//* Column Allias
+//! This will change Name to NAME and Age to AGE
+SELECT Name AS NAME, Age AS Age
+FROM student;
+
+//* Distinct
+//! This will remove all the duplicate name rows from table
+SELECT DISTINCT Name
+FROM student;
+
+//* For table structure
+DESC/DESCRIBE student;
+
+//* WHERE Clause
+//! This will display all the rows of students of age 18
+SELECT Name , Age
+FROM student
+WHERE Age = 18;
+
+//* Comparison operator (<,>,=,>=,<=,(!=,<>))
+//! This will display all the students of above age 18
+SELECT Name,Age
+FROM student
+WHERE Age>18;
+
+//* Logical operator (AND,OR,NOT)
+SELECT Name,Age
+FROM student
+WHERE Age=15 OR Age=18;
+
+//* Special operators (BETWEEN, IN,LIKE,NULL)
+SELECT Name,Age
+FROM student
+WHERE Age=15 BETWEEN Age=18;
+
+//* LIKE
+//! All the names starting with R
+SELECT Name,Age
+FROM student
+WHERE Name LIKE 'R%';
+
+//* ORDER BY
+//! This will display by the ascending order of roll no
+SELECT Name,Roll_No
+FROM student
+ORDER BY Roll_No;
+
+
